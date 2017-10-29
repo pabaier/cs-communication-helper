@@ -16,3 +16,11 @@ users = [
 users.each do |user|
    User.create!(user) 
 end
+
+groups = [
+    {:title => 'Cyber', :description => ''},
+    ]
+    
+groups.each do |group|
+   Group.create!(group) 
+end

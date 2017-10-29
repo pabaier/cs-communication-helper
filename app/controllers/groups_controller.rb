@@ -2,6 +2,9 @@ class GroupsController < ApplicationController
     def group_params
     params.require(:group).permit(:title, :description)
   end
+  
+  def index
+  end
     
     def new
         # default: render 'new' template
@@ -16,6 +19,5 @@ class GroupsController < ApplicationController
 def edit
     @group = Group.find params[:id]
 end
-def admin_home
-end
+
 end
