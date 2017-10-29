@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   resources :groups
+  root :to => redirect('/groups')
 end

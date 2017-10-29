@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   end
   
   def index
+      
   end
     
     def new
