@@ -1,4 +1,4 @@
-%h1 Groups
+%h1 All Groups
 %table#groups
   %thead
     %tr
@@ -9,4 +9,5 @@
       %tr
         %td= group.title
         %td= group.description
-        %td= link_to 'Add a group', new_group_path
+        
+= link_to 'Create a group', new_group_path

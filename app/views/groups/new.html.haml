@@ -1,0 +1,12 @@
+%h1 Create New Group
+
+= form_tag groups_path do
+
+  = label :group, :title, 'Title'
+  = text_field :group, 'title'
+
+  = label :group, :description, 'Description'
+  = text_field :group, 'description'
+
+  = submit_tag 'Confirm'
+  = submit_tag 'Cancel'

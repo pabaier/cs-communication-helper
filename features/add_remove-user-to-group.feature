@@ -11,5 +11,5 @@ Scenario: add student to group
 Scenario: unsubscribe student from group
   Given I am on the student details page
   When I uncheck "ACM Club"
-  Then the "ACM Cub" checkbox should not be checked
+  Then the "ACM Club" checkbox should not be checked
 

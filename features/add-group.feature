@@ -9,7 +9,7 @@ Scenario: Add new group
   Then I should not see "ACM Club"
   When I follow "Create a group"
   Then I should be on the create group page
-  When I fill in "group name" with "ACM Club"
+  When I fill in "Title" with "ACM Club"
   When I press "Confirm"
   Then I should be on the home page
   Then I should see "ACM Club"
@@ -19,7 +19,7 @@ Scenario: Cancel creation of a new group
   Then I should not see "ACM Club"
   When I follow "Create a group"
   Then I should be on the create group page
-  When I fill in "group name" with "ACM Club"
+  When I fill in "Title" with "ACM Club"
   When I press "Cancel"
   Then I should be on the home page
   Then I should not see "ACM Club"

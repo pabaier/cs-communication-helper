@@ -15,7 +15,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/groups'
-
+    when /^the create group\s?page$/
+      new_group_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
