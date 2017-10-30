@@ -56,4 +56,6 @@ Rails.application.routes.draw do
   #   end
   resources :groups
   root :to => redirect('/groups')
+  
+  resources :users
 end
