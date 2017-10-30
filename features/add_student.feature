@@ -4,12 +4,13 @@ Feature: Add a student
   I want to add a student to the communication helper database
 
 Scenario: Add new student
-Given that I am on the create student page
-When I fill in “Name” with “John Smith”
-And I fill in “Email” with “jsmith123@citadel.edu”
-And I fill in “Graduation Year” with “2020”
-And I fill in “Status” with “student”
-And I check Group A
-And I check Group B 
-And I press “Confirm”
-Then I should see “John Smith”
+  Given I am on the create student page
+  When I fill in "First Name" with "John"
+  And I fill in "Middle Initial" with "B"
+  And I fill in "Last Name" with "Smith"
+  And I fill in "Email" with "123@citadel.edu"
+  And I choose "3-May-2020" in "Graduation Date"
+  And I select "Student" from "Status"
+  And I press "Confirm"
+  Then I should see "123@citadel.edu"
+  #Then I should see “123@citadel.edu”
