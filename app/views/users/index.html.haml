@@ -1,0 +1,29 @@
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th First Name
+      %th Middle Initial
+      %th Last Name
+      %th Email
+      %th Password
+      %th Status
+      %th Graduation Date
+      - @all_groups.each do |agroup|
+        %th= agroup
+        
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.first_name
+        %td= user.middle_initial
+        %td= user.last_name
+        %td= user.email
+        %td= user.password
+        %td= user.status
+        %td= user.graduation_date
+    - @all_groups.each do |agroup|
+      %td= check_box_tag "#{agroup}", :id => "#{agroup}"
+
+= link_to 'Save', users_path       
