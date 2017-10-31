@@ -17,6 +17,10 @@ module NavigationHelpers
       '/groups'
     when /^the create group\s?page$/
       new_group_path
+    when /^the create student page$/
+      new_student_path
+    when /^the login page$/
+      '/login'
     when /^the student details\s?page$/
       '/users'
     # Add more mappings here.
