@@ -1,0 +1,8 @@
+%h1 Login
+
+%form
+  = label :user, :email, "Email"
+  = text_field :user, :email
+  = label :user, :password
+  = password_field :user, :password
+  = link_to 'Submit', groups_path

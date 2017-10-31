@@ -13,4 +13,3 @@ Scenario: Add new student
   And I select "Student" from "Status"
   And I press "Confirm"
   Then I should see "123@citadel.edu"
-  #Then I should see “123@citadel.edu”

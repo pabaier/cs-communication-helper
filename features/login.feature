@@ -1,16 +1,14 @@
-# Feature: Login user
-#   As a user
-#   So that I can access the communication helper
-#   I want to be able to login
-#   *this is just the skeleton with bones and no muscles or intestines
+Feature: Login user
+  As a user
+  So that I can access the communication helper
+  I want to be able to login
 
-# Scenario: Access the system
-# Given: I am on the home page
-# Then I should see an "Email" field
-# And I should see a "Password" field
-# And I should see a "Confirm" button
-# When I press "Confirm"
-# Then I should be on the admin page
+Scenario: Access the system
+    Given I am on the login page
+    When I fill in "Email" with "jbsmith124@citadel.edu"
+    And I fill in "Password" with "password567"
+    And I follow "Submit"
+    Then I am on the home page
 
 # Scenario: Login as admin
 # Given: I am user John B. Smith. My email address is jbsmith123@citadel.edu, 

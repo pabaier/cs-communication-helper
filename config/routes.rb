@@ -59,4 +59,6 @@ Rails.application.routes.draw do
   
   resources :students
   
+  resources :login
+  
 end
