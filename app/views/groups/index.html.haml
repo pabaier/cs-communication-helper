@@ -1,0 +1,13 @@
+%h1 All Groups
+%table#groups
+  %thead
+    %tr
+      %th Title
+      %th Description
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td= group.title
+        %td= group.description
+        
+= link_to 'Create a group', new_group_path

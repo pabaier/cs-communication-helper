@@ -54,4 +54,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :groups
+  root :to => redirect('/groups')
+  
+  resources :students
+  
+  resources :login
+  
 end
