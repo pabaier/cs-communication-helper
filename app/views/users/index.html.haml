@@ -11,7 +11,7 @@
       %th Status
       %th Graduation Date
       - @all_groups.each do |agroup|
-        %th= agroup
+        %th= agroup.title
         
   %tbody
     - @users.each do |user|
@@ -24,6 +24,6 @@
         %td= user.status
         %td= user.graduation_date
         - @all_groups.each do |agroup|
-          %td= check_box_tag "#{agroup}", :id => "#{agroup}"
+          %td= check_box_tag "agroup_#{user.email}", "agroup_#{user.email}"
 
 = link_to 'Save', users_path       
