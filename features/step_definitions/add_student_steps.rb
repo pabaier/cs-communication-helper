@@ -7,3 +7,9 @@ Given /the following users exist/ do |users_table|
 	  User.create!(user)
   end
 end
+
+Given /the following groups exist/ do |groups_table|
+  groups_table.hashes.each do |group|
+	  Group.create!(group)
+  end
+end
