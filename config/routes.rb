@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   resources :groups
-  root :to => redirect('/groups')
+  root :to => redirect('/login')
   
   resources :users
   resources :login

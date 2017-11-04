@@ -24,4 +24,10 @@
         - @all_groups.each do |agroup|
           %td= check_box_tag "#{agroup.title}_#{user.email}", :id => "#{agroup.title}_#{user.email}"
 
-= link_to 'Save', users_path       
+= link_to 'Save', users_path    
+
+%p
+= link_to 'Create new user', new_user_path
+
+%p
+= link_to 'Return to groups', groups_path
