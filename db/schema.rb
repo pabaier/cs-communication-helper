@@ -11,21 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "groups", force: :cascade do |t|
     t.string "title"
     t.text   "description"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "middle_initial"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "status"
-    t.datetime "graduation_date"
+  create_table "users", id: false, force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password"
+    t.string "status"
+    t.date   "graduation_date"
   end
+
+  create_table "users_groups", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
+  add_index "users_groups", ["group_id"], name: "index_users_groups_on_group_id"
+  add_index "users_groups", ["user_id"], name: "index_users_groups_on_user_id"
 
 end

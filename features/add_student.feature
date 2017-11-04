@@ -6,7 +6,6 @@ Feature: Add a student
 Scenario: Add new student
   Given I am on the create student page
   When I fill in "First Name" with "John"
-  And I fill in "Middle Initial" with "B"
   And I fill in "Last Name" with "Smith"
   And I fill in "Email" with "123@citadel.edu"
   And I choose "3-May-2020" in "Graduation Date"

@@ -58,7 +58,6 @@ Rails.application.routes.draw do
   root :to => redirect('/login')
   
   resources :users
-  resources :students
   resources :login
   
 end
