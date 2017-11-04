@@ -4,7 +4,6 @@
   %thead
     %tr
       %th First Name
-      %th Middle Initial
       %th Last Name
       %th Email
       %th Password
@@ -17,7 +16,6 @@
     - @users.each do |user|
       %tr
         %td= user.first_name
-        %td= user.middle_initial
         %td= user.last_name
         %td= user.email
         %td= user.password

@@ -7,10 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = [
-    {:first_name => 'John', :middle_initial => 'B', :last_name => 'Smith', :email => 'jbsmith123@citadel.edu',
-    :password => 'password1234', :status => 'Alumni', :graduation_date => '3-May-2000' } ,
-    {:first_name => 'Jane', :middle_initial => 'B',:last_name => 'Smith', :email => 'bsmith124@citadel.edu', 
-    :password => 'password567', :status => 'Student', :graduation_date => '3-May-2020'},
+    {:first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mverdicc@citadel.edu',
+    :password => 'password1234', :status => 'Admin', :graduation_date => '3-May-2000' } ,
     ]
     
 users.each do |user|
