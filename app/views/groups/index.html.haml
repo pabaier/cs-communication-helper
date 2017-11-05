@@ -9,8 +9,9 @@
       %tr
         %td= group.title
         %td= group.description
-        
+        %td= button_to 'Delete', group_path(group), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Create a group', new_group_path
+
 
 %h1 Users
 = link_to 'View Users', users_path
