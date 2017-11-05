@@ -9,11 +9,9 @@
     = f.text_field :first_name
   .field
     = f.label "Groups"
-    
     = f.collection_check_boxes :group_ids, Group.all, :id, :title do |b|
       .collection-check-box
         = b.check_box
         = b.label
   .actions
     = f.submit
-
