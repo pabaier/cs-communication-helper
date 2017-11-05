@@ -1,0 +1,10 @@
+-# in app/views/movies/show.html.haml
+
+%h2 Details about #{@user.first_name}
+
+%ul#details
+  %li
+    First Name:
+    = @user.first_name
+
+= link_to 'Edit', edit_user_path(@user)
