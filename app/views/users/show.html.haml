@@ -7,10 +7,15 @@
     First Name:
     = @user.first_name
   %li
+    Last Name:
+    = @user.last_name
+  %li
+    Email:
+    = @user.email
+  %li
     Groups:
     - @user.group_ids.each do |group|
       = @groups.find(group).title 
-
 
 = link_to 'Edit', edit_user_path(@user)
 = link_to 'All Users', users_path
