@@ -19,7 +19,9 @@
         %td= user.password
         %td= user.status
         %td= user.graduation_date
-        %td= link_to 'Subscription', edit_user_path(user)
+        %td= button_to "Delete User", {:action => "show", :controller => 'users', :id => user.email, :requirements => { :id => /[0-z\.]+/ }}, method: :delete
+
+
 
 = link_to 'Create new user', new_user_path
 
