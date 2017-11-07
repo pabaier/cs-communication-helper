@@ -18,7 +18,15 @@ ActiveRecord::Schema.define(version: 3) do
     t.text   "description"
   end
 
-  create_table "users", id: false, force: :cascade do |t|
+  create_table "groups_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
+  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id"
+  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id"
+
+  create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -26,13 +34,5 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "status"
     t.date   "graduation_date"
   end
-
-  create_table "users_groups", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
-  end
-
-  add_index "users_groups", ["group_id"], name: "index_users_groups_on_group_id"
-  add_index "users_groups", ["user_id"], name: "index_users_groups_on_user_id"
 
 end
