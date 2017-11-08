@@ -31,4 +31,16 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@user.first_name} was successfully updated."
     redirect_to user_path(@user)
   end
+  
+  def destroy
+    @user = User.find params[:id]
+    if @user.status == 'Admin'
+      flash[:notice] = "#{@user.last_name} cannot be removed."
+    else
+      flash[:notice] = "#{@user.last_name} was successfully removed."
+      User.delete(@user.id)
+    end
+    redirect_to users_path
+
+  end
 end

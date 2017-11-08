@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+/*  #96C0CE
+    #FEF6EB
+*/
+
+h1 {color: #525564;}
+h2 {color: #C25B56;}
+
+
+tr:nth-child(even) {background: #EEE}
+/*tr:nth-child(odd) {background: #FFF}*/
+tr:hover {background-color: #BEB9B5;}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #74828F;
+    color: white;
+}

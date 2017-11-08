@@ -8,7 +8,10 @@
 
 users = [
     {:first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mverdicc@citadel.edu',
-    :password => 'password1234', :status => 'Admin', :graduation_date => '3-May-2000' } ,
+    :password => 'password1234', :status => 'Admin', :graduation_date => '3-May-2000'} ,
+    {:first_name => 'Stephanie', :last_name => 'Martina', :email => 'sm@gmail.edu',
+    :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2000'}
+
     ]
     
 users.each do |user|
