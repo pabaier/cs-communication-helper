@@ -31,4 +31,10 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@user.first_name} was successfully updated."
     redirect_to user_path(@user)
   end
+  
+  def delete
+    flash[:notice] = "#{@user.last_name} was successfully removed."
+    redirect_to users_path
+
+  end
 end
