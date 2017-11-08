@@ -7,19 +7,16 @@ Background: users in database
   Given the following users exist:
   | first_name  | last_name | email                 | password | status  | graduation_date |   
   | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12 |
-  
-Scenario: Check box to subscribe to group
-  Given I am on the student details page
-  Then I should see "jbsmith123@citadel.edu"
-  When I check "ACM_jbsmith123@citadel.edu"
-  #When I follow "Save"
-  #Then I should be on the student details page
-  Then the "ACM_jbsmith123@citadel.edu" checkbox should be checked
+  | Jan         | Tinkerton    | tinkerbell88@neverland.pixi | peter  | Admin | 1/2/20 |  
 
-Scenario: Uncheck box to subscribe to group
-  Given I am on the student details page
+Scenario: Press 'delete' to remove user
+  Given I am on the users page
   Then I should see "jbsmith123@citadel.edu"
-  When I uncheck "ACM_jbsmith123@citadel.edu"
-  #When I follow "Save"
-  #Then I should be on the student details page
-  Then the "ACM_jbsmith123@citadel.edu" checkbox should not be checked
+  When I press "del_jbsmith123@citadel.edu"
+  Then I should not see "jbsmith123@citadel.edu"
+  
+Scenario: Press 'delete' but keep Admin
+  Given I am on the users page
+  Then I should see "tinkerbell88@neverland.pixi"
+  When I press "del_tinkerbell88@neverland.pixi"
+  Then I should see "tinkerbell88@neverland.pixi"
