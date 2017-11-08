@@ -23,6 +23,12 @@ module NavigationHelpers
       '/login'
     when /^the student details\s?page$/
       '/users'
+    when /^the student details page for "(.+)"/
+      u = User.find_by_email($1)
+      user_path(u)
+    when /^the student edit details page for "(.+)"/
+      u = User.find_by_email($1)
+      edit_user_path(u)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

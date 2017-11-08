@@ -1,0 +1,24 @@
+-# in app/views/movies/show.html.haml
+
+%h2 Details about #{@user.first_name}
+
+%ul#details
+  %li
+    First Name:
+    = @user.first_name
+  %li
+    Last Name:
+    = @user.last_name
+  %li
+    Email:
+    = @user.email
+  %li
+    Graduation Date:
+    = @user.graduation_date
+  %li
+    Groups:
+    - @user.group_ids.each do |group|
+      = @groups.find(group).title 
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'All Users', users_path
