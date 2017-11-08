@@ -1,27 +1,15 @@
 %h1 All Users
 
-%table#users
-  %thead
-    %tr
-      %th First Name
-      %th Last Name
-      %th Email
-      %th Password
-      %th Status
-      %th Graduation Date
-        
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.first_name
-        %td= user.last_name
-        %td= user.email
-        %td= user.password
-        %td= user.status
-        %td= user.graduation_date
-        %td= link_to 'Subscription', edit_user_path(user)
-
-= link_to 'Create new user', new_user_path
-
-%p
-= link_to 'Return to groups', groups_path
+.row
+  .col-xs-2 First Name
+  .col-xs-2 Last Name
+  .col-xs-2 Email
+  .col-xs-2 Password
+  .col-xs-2 Status
+  .col-xs-2 Graduation Date
+  
+- @users.each do |user|  
+.row 
+  .col-xs-2 user.first_name
+  
+  
