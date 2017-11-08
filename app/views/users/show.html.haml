@@ -13,6 +13,9 @@
     Email:
     = @user.email
   %li
+    Graduation Date:
+    = @user.graduation_date
+  %li
     Groups:
     - @user.group_ids.each do |group|
       = @groups.find(group).title 
