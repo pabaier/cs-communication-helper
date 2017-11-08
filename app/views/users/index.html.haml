@@ -9,8 +9,6 @@
       %th Password
       %th Status
       %th Graduation Date
-      - @all_groups.each do |agroup|
-        %th= agroup.title
         
   %tbody
     - @users.each do |user|
@@ -21,12 +19,8 @@
         %td= user.password
         %td= user.status
         %td= user.graduation_date
-        - @all_groups.each do |agroup|
-          %td= check_box_tag "#{agroup.title}_#{user.email}", :id => "#{agroup.title}_#{user.email}"
+        %td= link_to 'Subscription', edit_user_path(user)
 
-= link_to 'Save', users_path    
-
-%p
 = link_to 'Create new user', new_user_path
 
 %p
