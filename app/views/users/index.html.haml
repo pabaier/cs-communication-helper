@@ -1,4 +1,4 @@
-%h1 All Users
+%h2 All Users
 
 %table#users
   %thead
@@ -19,7 +19,8 @@
         %td= user.password
         %td= user.status
         %td= user.graduation_date
-        %td= link_to 'Subscription', edit_user_path(user)
+        %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
+        
 
 = link_to 'Create new user', new_user_path
 
