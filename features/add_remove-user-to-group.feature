@@ -5,25 +5,22 @@ Feature: Add user to group
   
 Background: users in database
   Given the following users exist:
-  | first_name  | last_name | email                 | password | status  | graduation_date |   
-  | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12 |
-   
-  Given the following groups exist:
-    | title | description |
-    | ACM   | The compsci club |
+  | first_name  | last_name | email                  | password | status  | graduation_date |   
+  | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12        |
   
-Scenario: Check box to subscribe to group
-  Given I am on the student details page
-  Then I should see "jbsmith123@citadel.edu"
-  When I check "ACM_jbsmith123@citadel.edu"
-  #When I follow "Save"
-  #Then I should be on the student details page
-  Then the "ACM_jbsmith123@citadel.edu" checkbox should be checked
-
-Scenario: Uncheck box to subscribe to group
-  Given I am on the student details page
-  Then I should see "jbsmith123@citadel.edu"
-  When I uncheck "ACM_jbsmith123@citadel.edu"
-  #When I follow "Save"
-  #Then I should be on the student details page
-  Then the "ACM_jbsmith123@citadel.edu" checkbox should not be checked
+  Given the following groups exist:
+    | title | description          |
+    | ACM   | The compsci club     |
+    | Cybersecurity | Cool hackers |
+  
+Scenario: Subscribe to group
+  Given I am on the student edit details page for "jbsmith123@citadel.edu"
+  When I subscribe to "Cybersecurity"
+  Then I should be on the student detail page for "jbsmith123@citadel.edu"
+  And I should see "Cybersecurity"
+  
+Scenario: Unsubscribe from group
+  Given I am on the student edit details page for "jbsmith123@citadel.edu"
+  When I unsubscribe from "ACM"
+  Then I should be on the student detail page for "jbsmith123@citadel.edu"
+  And I should not see "ACM"
