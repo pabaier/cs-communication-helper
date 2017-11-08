@@ -11,9 +11,9 @@ Background: users in database
 
 Scenario: Press 'delete' to remove user
   Given I am on the users page
-  Then I should see "jbsmith123@citadel.edu"
   When I press "del_jbsmith123@citadel.edu"
   Then I should not see "jbsmith123@citadel.edu"
+  And I should see "tinkerbell88@neverland.pixi"
   
 Scenario: Press 'delete' but keep Admin
   Given I am on the users page
