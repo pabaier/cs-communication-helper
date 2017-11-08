@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+tr:nth-child(even) {background: #EEE}
+/*tr:nth-child(odd) {background: #FFF}*/
+tr:hover {background-color: #c3dff4;}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3e91cb;
+    color: white;
+}
