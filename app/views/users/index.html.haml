@@ -1,9 +1,16 @@
 %h2 All Users
 
-- @all_groups.each do |group|
-  = group.title
-  = check_box_tag "groups[#{group.id}]", 1, :id => "groups_#{group.id}"
-= submit_tag 'Refresh', :id => 'groups_submit'
+// - @all_groups.each do |group|
+//   = group.title
+//   = check_box_tag "groups[#{group.id}]", 1, :groups => "groups_#{group.id}"
+// = submit_tag 'Refresh', {:id => 'groups_submit'}
+
+= form_tag users_path, :method => :get do
+  Include:
+  - @all_groups.each do |group|
+    = group.title
+    = check_box_tag "groups[#{group.id}]", 1, :id => "groups_#{group.id}"
+  = submit_tag 'Refresh'
 
 %table#users
   %thead

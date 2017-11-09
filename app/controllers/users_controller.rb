@@ -4,16 +4,19 @@ class UsersController < ApplicationController
     @all_groups=Group.all
       
     @selected_groups = params[:groups] || session[:groups] || {}
+    
+    @all_users = Array.new
+    if @selected_groups != {}
+      params[:groups].keys.each do |group_id|
+        Group.find(group_id).users.each do |user|
+          @all_users.push(user)
+        end
+      end
+      @users = @all_users
+    end  
       
-      
-    if @selected_groups == {}
-      @selected_groups = Hash[@all_groups.map {|groups| [groups, groups]}]
-    end
-      
-      
-    puts @selected_groups 
-      
-    @selected_users
+    # puts @selected_groups.inspect
+    # @selected_users
       
   end
   
