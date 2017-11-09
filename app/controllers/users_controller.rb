@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
   def index
-      @users=User.all
+    @users=User.all
+    @all_groups=Group.all
+      
+    @selected_groups = params[:groups] || session[:groups] || {}
+      
+      
+    if @selected_groups == {}
+      @selected_groups = Hash[@all_groups.map {|groups| [groups, groups]}]
+    end
+      
+      
+    puts @selected_groups 
+      
+    @selected_users
+      
   end
   
   def user_params
