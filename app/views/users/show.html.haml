@@ -1,24 +1,57 @@
--# in app/views/movies/show.html.haml
+// -# in app/views/movies/show.html.haml
 
-%h2 Details about #{@user.first_name}
+// %h2 Details about #{@user.first_name}
 
-%ul#details
-  %li
-    First Name:
-    = @user.first_name
-  %li
-    Last Name:
-    = @user.last_name
-  %li
-    Email:
-    = @user.email
-  %li
-    Graduation Date:
-    = @user.graduation_date
-  %li
-    Groups:
-    - @user.group_ids.each do |group|
-      = @groups.find(group).title 
+// %ul#details
+//   %li
+//     First Name:
+//     = @user.first_name
+//   %li
+//     Last Name:
+//     = @user.last_name
+//   %li
+//     Email:
+//     = @user.email
+//   %li
+//     Graduation Date:
+//     = @user.graduation_date
+//   %li
+//     Groups:
+//     - @user.group_ids.each do |group|
+//       = @groups.find(group).title 
 
-= link_to 'Edit', edit_user_path(@user)
-= link_to 'All Users', users_path
+// = link_to 'Edit', edit_user_path(@user)
+// = link_to 'All Users', users_path
+
+%h2 Computer Science Group Subscriptions for #{@user.first_name} #{@user.last_name}
+
+%table#details
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Email
+      %th Status
+      %th Graduation Date
+  %tbody
+    %tr
+      %td= @user.first_name
+      %td= @user.last_name
+      %td= @user.email
+      %td= @user.status
+      %td= @user.graduation_date
+%br
+= form_for(@user) do |f|
+  //empty field because starting with a field for collection check boxes breaks it for some reason
+  .field
+  .field
+    = f.label "Groups"
+    = f.collection_check_boxes :group_ids, Group.all, :id, :title do |b|
+      .collection-check-box
+        = b.check_box
+        = b.label
+  .actions
+    = f.submit
+    
+= link_to '(Admin link) Edit', edit_user_path(@user)
+= link_to '(Admin link) All Users', users_path

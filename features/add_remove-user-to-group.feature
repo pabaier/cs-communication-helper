@@ -17,10 +17,10 @@ Scenario: Subscribe to group
   Given I am on the student edit details page for "jbsmith123@citadel.edu"
   When I subscribe to "Cybersecurity"
   Then I should be on the student details page for "jbsmith123@citadel.edu"
-  And I should see "Cybersecurity"
+  And the user should be subscribed to "Cybersecurity"
   
 Scenario: Unsubscribe from group
   Given I am on the student edit details page for "jbsmith123@citadel.edu"
   When I unsubscribe from "ACM"
   Then I should be on the student details page for "jbsmith123@citadel.edu"
-  And I should not see "ACM"
+  And the user should be unsubscribed from "ACM"
