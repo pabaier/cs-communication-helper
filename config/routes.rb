@@ -62,5 +62,6 @@ Rails.application.routes.draw do
   # resources :users, path_names: { delete: 'del'}
   # delete "users/:id" => "users#delete", as: :delete_user
 
+ get 'users/student_index/:id', to: 'users#student_index', as: 'student_index'
 
 end

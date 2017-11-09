@@ -23,18 +23,18 @@
   %tbody
     - @selected_users.each do |user|
       %tr
-        %td= user.first_name
+        %td.first_name
+          = link_to(user.first_name, html_options = {:action => 'show', :id => user.id})
         %td= user.last_name
         %td= user.email
         %td= user.password
         %td= user.status
         %td= user.graduation_date
         %td= 'place_holder'
-        %td= button_to 'Subscribe', edit_user_path(user), :method => :get
+        %td= button_to 'Edit details', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
         
-
+%br
 = link_to 'Create new user', new_user_path
-
-%p
+%br
 = link_to 'Return to groups', groups_path
