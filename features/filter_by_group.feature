@@ -1,5 +1,5 @@
 Feature: Filter users by group
-Background: As an admin I should be able to filter users by a group
+# Background: As an admin I should be able to filter users by a group
 
 Background: users in database
   Given the following users exist:
@@ -20,8 +20,8 @@ Background: users in database
    | 2      | 1        |
   
 
-  Given I am on the users page
-  Then 2 seed users should exist
+#   Given I am on the users page
+#   Then 2 seed users should exist
   
 Scenario: Check ACM and Cybersecurity
     # enter step(s) to check the 'ACM' and 'Cybersecurity' checkboxes
