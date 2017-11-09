@@ -9,7 +9,7 @@
   Include:
   - @all_groups.each do |group|
     = group.title
-    = check_box_tag "groups[#{group.id}]", 1, :id => "groups_#{group.id}"
+    = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
   = submit_tag 'Refresh'
 
 %table#users
@@ -25,7 +25,7 @@
       %th{:colspan => "2"}
         
   %tbody
-    - @users.each do |user|
+    - @selected_users.each do |user|
       %tr
         %td= user.first_name
         %td= user.last_name

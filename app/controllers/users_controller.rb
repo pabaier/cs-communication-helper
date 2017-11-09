@@ -1,22 +1,34 @@
 class UsersController < ApplicationController
   def index
-    @users=User.all
+    @all_users=User.all
     @all_groups=Group.all
-      
+    
+    @selected_users = Array.new
+    
+    #This gives us the ids  
     @selected_groups = params[:groups] || session[:groups] || {}
     
-    @all_users = Array.new
-    if @selected_groups != {}
-      params[:groups].keys.each do |group_id|
-        Group.find(group_id).users.each do |user|
-          @all_users.push(user)
+    
+    if @selected_groups == {}
+      @selected_groups = Hash[@all_groups.map {|group| [group.title, group.id]}]
+    end
+    
+      
+    @selected_groups.values.each do |group_id|
+      Group.find(group_id).users.each do |user|
+        #maintain uniqueness
+        if !@selected_users.include? user
+          @selected_users.push(user)
         end
       end
-      @users = @all_users
-    end  
+    end
+    
+    if params[:groups] != session[:groups]
+      session[:groups] = @selected_groups
+      flash.keep
+      redirect_to :groups => @selected_groups and return
+    end
       
-    # puts @selected_groups.inspect
-    # @selected_users
       
   end
   
