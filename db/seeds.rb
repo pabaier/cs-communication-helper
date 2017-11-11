@@ -20,8 +20,21 @@ end
 
 groups = [
     {:title => "Cybersecurity", :description => "Cool hacker club"},
+    {:title => "Math Club", :description => "Very Exact"}
     ]
     
 groups.each do |group|
     Group.create!(group)
 end
+
+# groups_users = [
+#     {:user_id => 1, :group_id => 1},
+#     {:user_id => 2, :group_id => 2}
+#     ]
+
+Group.find(1).users << User.find(1)
+Group.find(2).users << User.find(2)
+
+# groups_users.each do |connection|
+#     Group.users << connection
+# end
