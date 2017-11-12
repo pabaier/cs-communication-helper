@@ -1,9 +1,10 @@
 When /^(?:|I )check the following groups: ([^"]*)$/ do |group_list|
   group_list.split.each do |group|
     group_id = Group.find_by_title(group).id
-    check("groups[#{group}]")
+    check("groups_#{group_id}")
     # find("groups[#{group}]").click
-    # find("groups_#{group_id}").click
+    # find("#groups_#{group_id}").click
+    # find("groups_#{group_id}", visible: false).set(true).click
 
   end
 end
