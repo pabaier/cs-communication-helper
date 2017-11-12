@@ -1,5 +1,6 @@
-%h1 All Users
+%h2 All Users
 
+<<<<<<< HEAD
 .row
   .col-xs-2 First Name
   .col-xs-2 Last Name
@@ -13,3 +14,32 @@
   .col-xs-2 user.first_name
   
   
+=======
+%table#users
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Email
+      %th Password
+      %th Status
+      %th Graduation Date
+        
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.email
+        %td= user.password
+        %td= user.status
+        %td= user.graduation_date
+        %td= button_to 'Subscribe', edit_user_path(user), :method => :get
+        %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
+        
+
+= link_to 'Create new user', new_user_path
+
+%p
+= link_to 'Return to groups', groups_path
+>>>>>>> master

@@ -34,4 +34,4 @@ Scenario: Delete a group
   Then I should see "ACM Club"
   When I press "Delete"
   Then I should be on the home page
-  Then I should not see "ACM Club"
+  Then I should not see "The compsci club"
