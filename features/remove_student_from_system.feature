@@ -9,6 +9,14 @@ Background: users in database
   | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12 |
   | Jan         | Tinkerton    | tinkerbell88@neverland.pixi | peter  | Admin | 1/2/20 |  
 
+  Given the following groups exist:
+   |id | title         | description      |
+   |1  | ACM           | The compsci club |
+   |2  | Cybersecurity | Cool hackers     |
+
+  Given the user "1" belongs to the groups "1, 2"
+  Given the user "2" belongs to the groups "1, 2"
+
 Scenario: Press 'delete' to remove user
   Given I am on the users page
   When I press "del_jbsmith123@citadel.edu"
