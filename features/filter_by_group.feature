@@ -2,10 +2,14 @@ Feature: Filter users by group
 # Background: As an admin I should be able to filter users by a group
 
 Background: users in database
+#   Given the following users exist:
+#   |id   | first_name  | last_name | email                         | password | status  | graduation_date |   
+#   |1    | Bob         | Manman    | jbsmith123@citadel.edu        | pass123  | student | 12/12/12 |
+#   |2    | Jan         | Tinkerton | tinkerbell88@neverland.pixi   | peter    | Admin   | 1/2/20 |  
   Given the following users exist:
-  |id   | first_name  | last_name | email                         | password | status  | graduation_date |   
-  |1    | Bob         | Manman    | jbsmith123@citadel.edu        | pass123  | student | 12/12/12 |
-  |2    | Jan         | Tinkerton | tinkerbell88@neverland.pixi   | peter    | Admin   | 1/2/20 |  
+   | first_name  | last_name | email                 | password | status  | graduation_date |   
+   | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12 |
+   | Jan         | Tinkerton    | tinkerbell88@neverland.pixi | peter  | Admin | 1/2/20 | 
   
   Given the following groups exist:
    |id | title         | description          |
@@ -25,16 +29,18 @@ Background: users in database
   
 Scenario: Check ACM and Cybersecurity
     # enter step(s) to check the 'ACM' and 'Cybersecurity' checkboxes
+    Given I am on the student details page
 	When I check the following groups: ACM Cybersecurity
 
     # enter step to "submit" the search form on the user page
     #Refresh is the value associated with the submit input type
 	And I press "Refresh"
     # enter step(s) to ensure that ACM and Cybersecurity users are visible
-    Then I should see the following users: Bob Jan  
+    And I should see the following users: Bob Jan  
 
 Scenario: Check ACM only
     # enter step(s) to check the 'ACM' checkboxes
+    Given I am on the student details page
 	When I check the following groups: ACM
 
     # enter step(s) to uncheck all other checkboxes
@@ -49,10 +55,11 @@ Scenario: Check ACM only
     
 Scenario: Check Cybersecurity only
     # enter step(s) to check the 'Cybersecurity' checkboxes
-	When I check the following ratings: Cybersecurity
+    Given I am on the student details page
+	When I check the following groups: Cybersecurity
 
     # enter step(s) to uncheck all other checkboxes
-	And I uncheck the following ratings: ACM
+	And I uncheck the following groups: ACM
 
     # enter step to "submit" the search form on the user page
     #Refresh is the value associated with the submit input type
