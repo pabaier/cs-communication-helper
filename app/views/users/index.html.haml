@@ -1,5 +1,13 @@
 %h2 All Users
 
+= form_tag users_path, :method => :get do
+  Filter:
+  - @all_groups.each do |group|
+    = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
+    = label_tag "groups_#{group.id}", group.title
+  = submit_tag 'Refresh'
+
+
 %table#users
   %thead
     %tr
@@ -9,21 +17,24 @@
       %th Password
       %th Status
       %th Graduation Date
+      %th Groups
+      %th{:colspan => "2"}
         
   %tbody
-    - @users.each do |user|
+    - @selected_users.each do |user|
       %tr
-        %td= user.first_name
+        %td.first_name
+          = link_to(user.first_name, html_options = {:action => 'show', :id => user.id})
         %td= user.last_name
         %td= user.email
         %td= user.password
         %td= user.status
         %td= user.graduation_date
-        %td= button_to 'Subscribe', edit_user_path(user), :method => :get
+        %td= 'place_holder'
+        %td= button_to 'Edit details', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
         
-
+%br
 = link_to 'Create new user', new_user_path
-
-%p
+%br
 = link_to 'Return to groups', groups_path
