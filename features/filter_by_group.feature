@@ -2,19 +2,15 @@ Feature: Filter users by group
 # Background: As an admin I should be able to filter users by a group
 
 Background: users in database
-#   Given the following users exist:
-#   |id   | first_name  | last_name | email                         | password | status  | graduation_date | group_ids | 
-#   |1    | Bob         | Manman    | jbsmith123@citadel.edu        | pass123  | student | 12/12/12 | 1, 2 |
-#   |2    | Jan         | Tinkerton | tinkerbell88@neverland.pixi   | peter    | Admin   | 1/2/20 |  1 |
   Given the following users exist:
-   | first_name  | last_name | email                 | password | status  | graduation_date |   
-   | Bob         | Manman    | jbsmith123@citadel.edu | pass123  | student | 12/12/12 |
-   | Jan         | Tinkerton    | tinkerbell88@neverland.pixi | peter  | Admin | 1/2/20 | 
+   | first_name  | last_name | email                       | password | status  | graduation_date |   
+   | Bob         | Manman    | jbsmith123@citadel.edu      | pass123  | student | 12/12/12        |
+   | Jan         | Tinkerton | tinkerbell88@neverland.pixi | peter    | Admin   | 1/2/20          | 
   
   Given the following groups exist:
-   |id | title         | description          |
-   |1  | ACM           | The compsci club     |
-   |2  | Cybersecurity | Cool hackers |
+   |id | title         | description      |
+   |1  | ACM           | The compsci club |
+   |2  | Cybersecurity | Cool hackers     |
 
   Given the user "1" belongs to the groups "1, 2"
   Given the user "2" belongs to the groups "1"

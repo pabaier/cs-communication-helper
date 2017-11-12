@@ -13,6 +13,8 @@ Background: users in database
     | ACM   | The compsci club     |
     | Cybersecurity | Cool hackers |
   
+  Given the user "1" belongs to the groups "1, 2"
+
 Scenario: Subscribe to group
   Given I am on the student details page
   When I follow "Bob"
