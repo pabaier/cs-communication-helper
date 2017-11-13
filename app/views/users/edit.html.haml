@@ -1,6 +1,10 @@
 -# edit.html.haml using partial
+.row
+  .back_nav= link_to 'Back', users_path
+  .logout= link_to 'Log out', login_path
 
-%h1 Edit Student Subscription
+
+%h2 Edit Student Subscription
 
 = form_for(@user) do |f|
   .field

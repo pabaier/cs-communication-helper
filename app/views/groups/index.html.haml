@@ -1,9 +1,14 @@
-%h1 All Groups
-%table#groups
+.row
+  .logout= link_to 'Log out', login_path
+
+%h2 All Groups
+
+%table.table.table-bordered
   %thead
     %tr
       %th Title
       %th Description
+      %th Remove
   %tbody
     - @groups.each do |group|
       %tr

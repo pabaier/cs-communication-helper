@@ -1,21 +1,21 @@
+.row
+  .back_nav= link_to 'Back', groups_path
+  .logout= link_to 'Log out', login_path
+
+
 %h2 All Users
 
-<<<<<<< HEAD
-.row
-  .col-xs-2 First Name
-  .col-xs-2 Last Name
-  .col-xs-2 Email
-  .col-xs-2 Password
-  .col-xs-2 Status
-  .col-xs-2 Graduation Date
-  
-- @users.each do |user|  
-.row 
-  .col-xs-2 user.first_name
-  
-  
-=======
-%table#users
+= form_tag users_path, :method => :get do
+  Include:
+  - @all_groups.each do |group|
+    = group.title
+    %label{ :for => "groups_#{group.id}"}
+      = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
+  = submit_tag 'Refresh'
+  // = label_tag "groups_#{group.id}", group.title
+
+%table.table.table-bordered
+
   %thead
     %tr
       %th First Name
@@ -24,9 +24,12 @@
       %th Password
       %th Status
       %th Graduation Date
-        
-  %tbody
-    - @users.each do |user|
+      %th Groups
+      %th{:colspan => "2"} Modify
+      
+      
+    %tbody
+    - @selected_users.each do |user|
       %tr
         %td= user.first_name
         %td= user.last_name
@@ -34,12 +37,10 @@
         %td= user.password
         %td= user.status
         %td= user.graduation_date
+        %td= 'place_holder'
         %td= button_to 'Subscribe', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
-        
-
+    
+  
+  
 = link_to 'Create new user', new_user_path
-
-%p
-= link_to 'Return to groups', groups_path
->>>>>>> master

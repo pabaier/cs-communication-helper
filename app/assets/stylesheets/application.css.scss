@@ -14,7 +14,7 @@
  *= require_self
  */
 
-<<<<<<< HEAD:app/assets/stylesheets/application.css.scss
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -24,7 +24,8 @@
 
 h1, h2, h3, h4 {
   margin: 0;
-  padding: 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 ul, li {
@@ -39,7 +40,7 @@ html, body {
   padding: 0;
   background-color: white;
 }
-=======
+
 /*  #96C0CE
     #FEF6EB
 */
@@ -54,8 +55,36 @@ tr:hover {background-color: #BEB9B5;}
 th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align:center;
     background-color: #74828F;
     color: white;
 }
->>>>>>> master:app/assets/stylesheets/application.css
+
+.back_nav{
+  float:left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  text-align:left;
+}
+.back_nav:hover{
+  font-size: 200%;
+}
+
+
+.logout{
+  float:right;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 25px;
+  text-align:right;
+}
+.logout:hover {
+  font-size: 200%;
+}
+
+.field {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
