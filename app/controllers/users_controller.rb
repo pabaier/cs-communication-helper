@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :graduation_date, :status, :group_ids => [])
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :graduation_date, :status, :group_ids => [])
   end
   
   def new
@@ -51,7 +51,22 @@ class UsersController < ApplicationController
   
   def create
     @selected_groups = params[:groups]
+    
+    if @selected_groups == {}
+      
+      @acm_group = Group.where(title: 'ACM')
+      @default_group = Group.find @acm_group.ids
+      
+      @selected_groups = Hash[ [@default_group.title, @default_group.id]]
+    end
+    
+
     @user = User.create!(user_params)
+    
+    @selected_groups.values.each do |group_id|
+      
+    end
+    
     flash[:notice] = "#{@user.first_name} #{@user.last_name} was successfully created."
     redirect_to users_path
   end
