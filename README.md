@@ -1,18 +1,5 @@
+You have stumbled upon, or are grading, our CS Communication Helper Web App!
+If you are grading - please be gentle :) 
+This web app is being expertly developed by the capable minds of Paul Baier, Elaina Cole, Emily Coleman, Chase Platz, and Ahana Roy. Dr. Michael Verdicchio is overseeing the project as our professor for CSIS/CSCI 602: Introduction to Software Engineering as part of The College of Charleston and The Citadel's joint Masters Program.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team# cs-communication-helper
+We hope you enjoy the site!
