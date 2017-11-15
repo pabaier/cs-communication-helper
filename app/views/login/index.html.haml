@@ -3,8 +3,10 @@
 %form
   .field
     = label :user, :email, "Email"
-    = text_field :user, :email
+    = text_field :user, :email, :size => "24"
   .field
     = label :user, :password
-    = password_field :user, :password
+    = password_field :user, :password, :size => "20"
   = link_to 'Submit', groups_path
+  
+.bottom-margin
