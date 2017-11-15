@@ -6,11 +6,12 @@
 %h2 All Users
 
 = form_tag users_path, :method => :get do
-  Include:
+  All Available Groups: 
   - @all_groups.each do |group|
-    = group.title
-    %label{ :for => "groups_#{group.id}"}
-      = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
+    .field
+      = group.title
+      %label{ :for => "groups_#{group.id}"}
+        = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
   = submit_tag 'Refresh'
   // = label_tag "groups_#{group.id}", group.title
 
