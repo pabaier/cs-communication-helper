@@ -37,7 +37,7 @@
         %td= user.status
         %td= user.graduation_date
         %td= 'place_holder'
-        %td= button_to 'Subscribe', edit_user_path(user), :method => :get
+        %td= button_to 'Modify User', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
     
   
