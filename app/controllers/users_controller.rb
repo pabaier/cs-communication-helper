@@ -61,6 +61,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
   
+  def import
+    User.import(params[:file])
+    redirect_to users_path, notice: "Data imported"
+  end
+  
   def destroy
     @user = User.find params[:id]
     if @user.status == 'Admin'
