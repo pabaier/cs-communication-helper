@@ -1,11 +1,7 @@
 When /^(?:|I )check the following groups: ([^"]*)$/ do |group_list|
   group_list.split.each do |group|
     group_id = Group.find_by_title(group).id
-    #check("groups[#{group}]")
     check("groups_#{group_id}", allow_label_click: true)
-    # find("groups[#{group}]").click
-    # find("groups_#{group_id}").click
-
   end
 end
 
@@ -13,17 +9,15 @@ When /^(?:|I )uncheck the following groups: ([^"]*)$/ do |group_list|
   group_list.split.each do |group|
     group_id = Group.find_by_title(group).id
     uncheck("groups_#{group_id}", allow_label_click: true)
-    # find("groups[#{group}]").click
-    # find("#groups_#{group_id}").click
-    # find("groups_#{group_id}", visible: false).set(true).click
-
   end
 end
 
-Given /the following groups_users exist/ do |groups_users_table|
-  groups_users_table.hashes.each do |gu|
-    # https://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_and_belongs_to_many
-    Group#users << gu
+Given("the user {string} belongs to the groups {string}") do |user_id, groups|
+  user = User.find_by_id(user_id)
+  
+  groups.split(", ").each do |group_id|
+    group = Group.find_by_id(group_id)
+    user.groups << group
   end
 end
 

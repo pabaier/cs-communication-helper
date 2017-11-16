@@ -8,15 +8,12 @@
 = form_tag users_path, :method => :get do
   All Available Groups: 
   - @all_groups.each do |group|
-    .field
-      = group.title
-      %label{ :for => "groups_#{group.id}"}
-        = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
+    = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
+    = label_tag "groups_#{group.id}", group.title
   = submit_tag 'Refresh'
-  // = label_tag "groups_#{group.id}", group.title
+
 
 %table.table.table-bordered
-
   %thead
     %tr
       %th First Name
@@ -26,22 +23,21 @@
       %th Graduation Date
       %th Groups
       %th{:colspan => "2"} Modify
-      
-      
-    %tbody
+        
+  %tbody
     - @selected_users.each do |user|
       %tr
-        %td= user.first_name
+        %td.first_name
+          = link_to(user.first_name, html_options = {:action => 'show', :id => user.id})
         %td= user.last_name
         %td= user.email
         %td= user.status
         %td= user.graduation_date
         %td= 'place_holder'
-        %td= button_to 'Modify User', edit_user_path(user), :method => :get
+        %td= button_to 'Edit details', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
-    
-  
-  
+        
+%br
 = link_to 'Create new user', new_user_path
 
 .bottom-margin
