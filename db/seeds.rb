@@ -20,7 +20,8 @@ end
 
 groups = [
     {:title => "Cybersecurity", :description => "Cool hacker club"},
-    {:title => "Math Club", :description => "Very Exact"}
+    {:title => "Math Club", :description => "Very Exact"},
+    {:title => "Computer Science", :description => "Computer Science Department"}
     ]
     
 groups.each do |group|

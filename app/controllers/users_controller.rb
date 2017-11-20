@@ -50,21 +50,26 @@ class UsersController < ApplicationController
   end
   
   def create
-    @selected_groups = params[:groups]
+
+    @cs_group = Group.where(title: 'Computer Science').first
+    @cs_group_id = Group.find_by_title('Computer Science').id
+    
+    @selected_groups = params[:groups] || {}
     
     if @selected_groups == {}
-      
-      @acm_group = Group.where(title: 'ACM')
-      @default_group = Group.find @acm_group.ids
-      
-      @selected_groups = Hash[ [@default_group.title, @default_group.id]]
+      puts 'Selected Group is {}'
+      @selected_groups = {@cs_group.title => @cs_group_id}
     end
     
+    if !@selected_groups.has_key?('Computer Science')
+      @selected_groups.merge({@cs_group.title => @cs_group_id})
+    end
 
     @user = User.create!(user_params)
     
     @selected_groups.values.each do |group_id|
-      
+      group = Group.find_by_id(group_id)
+      @user.groups << group
     end
     
     flash[:notice] = "#{@user.first_name} #{@user.last_name} was successfully created."
