@@ -65,9 +65,22 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        2,
+        14,
+        null,
+        14,
+        null,
         null,
         null,
         null
@@ -75,65 +88,12 @@
       "/home/ubuntu/workspace/cs-communication-helper/app/controllers/users_controller.rb": [
         1,
         1,
-<<<<<<< HEAD
-        13,
-        13,
-        null,
-        13,
-        null,
-        null,
-        13,
-        null,
-        null,
-        13,
-        11,
-        null,
-        null,
-        null,
-        13,
-        18,
-        null,
-        0,
-        0,
-=======
-        15,
-        15,
-        null,
-        15,
-        null,
-        null,
-        15,
-        null,
-        null,
-        15,
-        27,
-        null,
-        null,
-        null,
-        15,
-        26,
-        null,
-        39,
-        25,
->>>>>>> master
+
         null,
         null,
         null,
         null,
-<<<<<<< HEAD
-        13,
-        4,
-        4,
-        4,
-=======
-        15,
-        3,
-        3,
-        3,
-        null,
-        null,
-        null,
->>>>>>> master
+
         null,
         null,
         null,
@@ -169,9 +129,20 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         0,
         0,
         0,
+=======
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+>>>>>>> 31402538739fa46cf4e1bfe70fbcd040ff42bd1e
         null,
         0,
         0,
@@ -192,10 +163,14 @@
       ]
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1510515771
 =======
     "timestamp": 1510524981
 >>>>>>> master
+=======
+    "timestamp": 1511473657
+>>>>>>> 31402538739fa46cf4e1bfe70fbcd040ff42bd1e
   },
   "RSpec": {
     "coverage": {
