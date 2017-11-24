@@ -25,7 +25,7 @@ Scenario: Cancel creation of a new group
   When I follow "Create a group"
   Then I should be on the create group page
   When I fill in "Title" with "WiC Club"
-  When I follow "Cancel"
+  When I follow "Back"
   Then I should be on the home page
   Then I should not see "WiC Club"
   
