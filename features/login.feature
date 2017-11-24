@@ -7,7 +7,7 @@ Scenario: Access the system
     Given I am on the login page
     When I fill in "Email" with "jbsmith124@citadel.edu"
     And I fill in "Password" with "password567"
-    And I follow "Submit"
+    And I press "Submit"
     Then I am on the home page
 
 # Scenario: Login as admin
