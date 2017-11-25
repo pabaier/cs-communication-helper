@@ -1,0 +1,7 @@
+%body
+  %tr
+    %td= @emails.compact.join(@delimiter + " ")
+
+%br
+%br
+= link_to "Return to users", users_path
