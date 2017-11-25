@@ -63,5 +63,6 @@ Rails.application.routes.draw do
   # delete "users/:id" => "users#delete", as: :delete_user
 
  get 'users/student_index/:id', to: 'users#student_index', as: 'student_index'
+ get 'users/student/export', to: 'users#export', as: 'export'
 
 end
