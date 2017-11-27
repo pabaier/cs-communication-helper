@@ -57,4 +57,12 @@ describe UsersController do
             expect(response).to render_template("users/new")
         end
     end
+    
+    describe "#import" do
+        it 'should import users' do
+            @user=User.import(:id=>1)
+            get :show, :id => @user
+            expect(response).to redirect_to(users_path)
+        end
+    end
 end
