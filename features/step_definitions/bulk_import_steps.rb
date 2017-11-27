@@ -15,7 +15,7 @@ When /^(?:|I )upload a bad file$/ do
 end
 
 Then("the number of users should not change") do
-  # Write code here that turns the phrase above into concrete actions
+  User.count.should == 4
 end
 
 Then /^I should have the following users:$/ do |table|

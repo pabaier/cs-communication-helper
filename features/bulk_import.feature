@@ -26,5 +26,11 @@ Scenario: Uploading a valid file with new users
 Scenario: Uploading a bad file
   Given I am on the users page
   When I upload a bad file
-  Then the number of users should not change
+  Then the number of users should be 4
+  Then I should have the following users:
+  | first_name|
+  | Bob       |
+  | Jan       |
+  | Sam       |
+  | Shelly    |
   And I should be on the users page
