@@ -58,7 +58,6 @@ class UsersController < ApplicationController
     @selected_groups = params[:groups] || {}
     
     if @selected_groups == {}
-      puts 'Selected Group is {}'
       @selected_groups = {@cs_group.title => @cs_group_id}
     end
     
