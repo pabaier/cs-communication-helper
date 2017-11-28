@@ -61,19 +61,25 @@ describe UsersController do
     
     describe "POST #import" do
         it "redirects to the users page" do
-          allow(User).to receive(:import).with("users.csv")
+          allow(User).to receive(:import).with("users.csv").and_return(["hello", "world"])
           post :import, file: "users.csv"
           expect(response).to redirect_to users_path
         end
 
-        it "adds a flash notice" do
-          allow(User).to receive(:import).with("users.csv")
+        it "adds a good flash notice" do
+          allow(User).to receive(:import).with("users.csv").and_return([])
           post :import, file: "users.csv"
           expect(flash[:notice]).to eq "Data imported successfully"
         end
+        
+        it "adds a bad flash notice" do
+          allow(User).to receive(:import).with("users.csv").and_return(["Steve"])
+          post :import, file: "users.csv"
+          expect(flash[:notice]).to eq "Unable to import 1 users:[\"Steve\"]"
+        end
     
         it "imports the user file" do
-          expect(User).to receive(:import).with("users.csv")
+          allow(User).to receive(:import).with("users.csv").and_return(["hello", "world"])
           post :import, file: "users.csv"
         end
     end

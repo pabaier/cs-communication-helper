@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  require 'csv'
+
   def index
     @all_users=User.all
     @all_groups=Group.all
@@ -85,9 +87,9 @@ class UsersController < ApplicationController
   end
   
   def import
-    User.import(params[:file])
+    # User.import(params[:file])
     errors = User.import(params[:file])
-    if errors.length > 1 then
+    if errors.length >= 1 then
       flash[:notice] = "Unable to import #{errors.length} users:#{errors}"
     else
       flash[:notice] = "Data imported successfully"

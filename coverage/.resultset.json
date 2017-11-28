@@ -73,28 +73,30 @@
         null,
         null,
         1,
-        4,
-        4,
+        2,
+        2,
         null,
         null,
-        4,
-        14,
-        10,
-        10,
+        2,
+        7,
+        5,
+        5,
         null,
         null,
-        10,
+        5,
         null,
-        4,
+        2,
         null,
         null,
-        4,
+        2,
         null,
         null,
         null
       ],
       "/home/ubuntu/workspace/cs-communication-helper/app/controllers/users_controller.rb": [
         1,
+        1,
+        null,
         1,
         26,
         26,
@@ -181,7 +183,7 @@
         null,
         null,
         1,
-        2,
+        null,
         2,
         2,
         1,
@@ -219,7 +221,7 @@
         null
       ]
     },
-    "timestamp": 1511896252
+    "timestamp": 1511899537
   },
   "RSpec": {
     "coverage": {
@@ -283,6 +285,8 @@
       "/home/ubuntu/workspace/cs-communication-helper/app/controllers/users_controller.rb": [
         1,
         1,
+        null,
+        1,
         1,
         1,
         1,
@@ -368,15 +372,15 @@
         null,
         null,
         1,
+        null,
+        4,
+        4,
         3,
         null,
+        1,
         null,
+        4,
         null,
-        null,
-        null,
-        null,
-        null,
-        3,
         null,
         null,
         1,
@@ -416,7 +420,7 @@
         0,
         0,
         0,
-        null,
+        0,
         null,
         null,
         0,
@@ -441,6 +445,6 @@
         null
       ]
     },
-    "timestamp": 1511895766
+    "timestamp": 1511899504
   }
 }
