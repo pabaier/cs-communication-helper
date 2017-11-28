@@ -12,8 +12,8 @@
     = label_tag "groups_#{group.id}", group.title
   = submit_tag 'Refresh'
 
-
-%table.table.table-bordered
+%p
+%table#users
   %thead
     %tr
       %th First Name
@@ -37,6 +37,14 @@
         %td= button_to 'Edit details', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
         
+%p
+= form_tag export_path, :method => :get do
+  = field_set_tag do
+    = submit_tag "Export table"
+    with delimiter
+    = select_tag("delimiter", options_for_select(@all_delimiters, :delimiter))
+
+%br
 %div
 %br
   Bulk Import Student List
