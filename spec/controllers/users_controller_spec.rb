@@ -58,11 +58,22 @@ describe UsersController do
         end
     end
     
-    describe "#import" do
-        it 'should import users' do
-            @user=User.import(:id=>1)
-            get :show, :id => @user
-            expect(response).to redirect_to(users_path)
+    describe "POST #import" do
+        it "redirects to the users page" do
+          allow(User).to receive(:import).with("users.csv")
+          post :import, file: "users.csv"
+          expect(response).to redirect_to users_path
+        end
+
+        it "adds a flash notice" do
+          allow(User).to receive(:import).with("users.csv")
+          post :import, file: "users.csv"
+          expect(flash[:notice]).to eq "Data imported successfully"
+        end
+    
+        it "imports the user file" do
+          expect(User).to receive(:import).with("users.csv")
+          post :import, file: "users.csv"
         end
     end
 end
