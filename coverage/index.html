@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-28T20:05:37+00:00">2017-11-28T20:05:37+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-28T20:21:30+00:00">2017-11-28T20:21:30+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.25%</span></span>
+    (<span class="covered_percent"><span class="green">96.4%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.77
+         6.7
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>109</b> relevant lines. 
-    <span class="green"><b>106</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed </span>
+    <b>111</b> relevant lines. 
+    <span class="green"><b>107</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#bc22a92cea5cc3250aeb5bfec4c217070761e023" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">96.97 %</td>
-        <td>117</td>
-        <td>66</td>
-        <td>64</td>
-        <td>2</td>
-        <td>9.6</td>
+        <td class="green strong">95.59 %</td>
+        <td>122</td>
+        <td>68</td>
+        <td>65</td>
+        <td>3</td>
+        <td>9.4</td>
       </tr>
       
       <tr>
@@ -129,20 +129,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="green">96.67%</span></span>
+    (<span class="covered_percent"><span class="green">95.65%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.62
+         7.51
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>4</b> files in total.
-    <b>90</b> relevant lines. 
-    <span class="green"><b>87</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed </span>
+    <b>92</b> relevant lines. 
+    <span class="green"><b>88</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -190,12 +190,12 @@
       
       <tr>
         <td class="strong"><a href="#bc22a92cea5cc3250aeb5bfec4c217070761e023" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">96.97 %</td>
-        <td>117</td>
-        <td>66</td>
-        <td>64</td>
-        <td>2</td>
-        <td>9.6</td>
+        <td class="green strong">95.59 %</td>
+        <td>122</td>
+        <td>68</td>
+        <td>65</td>
+        <td>3</td>
+        <td>9.4</td>
       </tr>
       
     </tbody>
@@ -770,11 +770,11 @@
         <div class="source_table" id="bc22a92cea5cc3250aeb5bfec4c217070761e023">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="green">96.97 %</span> covered</h4>
+    <h4><span class="green">95.59 %</span> covered</h4>
     <div>
-      <b>66</b> relevant lines. 
-      <span class="green"><b>64</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>68</b> relevant lines. 
+      <span class="green"><b>65</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -1321,154 +1321,154 @@
           <code class="ruby">    # User.import(params[:file])</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="91">
-          <span class="hits">6</span>
+        <li class="never" data-hits="" data-linenumber="91">
           
-          <code class="ruby">    errors = User.import(params[:file])</code>
+          
+          <code class="ruby">    # puts params[:file]</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="92">
           <span class="hits">6</span>
           
-          <code class="ruby">    if errors.length &gt;= 1 then</code>
+          <code class="ruby">    if params.key?(:file) then</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="93">
+        <li class="covered" data-hits="6" data-linenumber="93">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      errors = User.import(params[:file])</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="94">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      if errors.length &gt;= 1 then</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="95">
           <span class="hits">4</span>
           
-          <code class="ruby">      flash[:notice] = &quot;Unable to import #{errors.length} users:#{errors}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="95">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      flash[:notice] = &quot;Data imported successfully&quot;</code>
+          <code class="ruby">        flash[:notice] = &quot;Unable to import #{errors.length} users:#{errors}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="97">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="97">
+          <span class="hits">2</span>
           
-          <code class="ruby">    redirect_to users_path</code>
+          <code class="ruby">        flash[:notice] = &quot;Data imported successfully&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
           
           
-          <code class="ruby">    # redirect_to users_path, notice: &quot;Data imported successfully&quot;</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="101">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="102">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    @user = User.find params[:id]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="103">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    if @user.status == &#39;Admin&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="104">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      flash[:notice] = &quot;#{@user.last_name} cannot be removed.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="105">
-          
-          
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="106">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="100">
           
-          <code class="ruby">      flash[:notice] = &quot;#{@user.last_name} was successfully removed.&quot;</code>
+          
+          <code class="ruby">      flash[:notice] = &quot;No file selected!&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="107">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      User.delete(@user.id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="109">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="102">
+          <span class="hits">6</span>
           
           <code class="ruby">    redirect_to users_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      # redirect_to users_path, notice: &quot;Data imported successfully&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="113">
+        <li class="covered" data-hits="2" data-linenumber="106">
           <span class="hits">2</span>
           
-          <code class="ruby">  def export</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="114">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="107">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @emails = session[:emails] || []</code>
+          <code class="ruby">    @user = User.find params[:id]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="115">
+        <li class="covered" data-hits="4" data-linenumber="108">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    if @user.status == &#39;Admin&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="109">
           <span class="hits">2</span>
           
-          <code class="ruby">    @delimiter = params[:delimiter]</code>
+          <code class="ruby">      flash[:notice] = &quot;#{@user.last_name} cannot be removed.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="111">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      flash[:notice] = &quot;#{@user.last_name} was successfully removed.&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="112">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      User.delete(@user.id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="114">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    redirect_to users_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
@@ -1478,6 +1478,36 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="118">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  def export</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="119">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @emails = session[:emails] || []</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="120">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @delimiter = params[:delimiter]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
           
           
           <code class="ruby">end</code>
