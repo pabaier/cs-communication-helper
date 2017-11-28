@@ -86,14 +86,14 @@ class UsersController < ApplicationController
   
   def import
     User.import(params[:file])
-    #errors = User.import(params[:file])
-    #if errors.length > 1 then
-     # flash[:notice] = "Unable to import #{errors.length} users:#{errors}"
-    #else
-     # flash[:notice] = "Data imported successfully"
-   # end
-    #redirect_to users_path
-    redirect_to users_path, notice: "Data imported successfully"
+    errors = User.import(params[:file])
+    if errors.length > 1 then
+      flash[:notice] = "Unable to import #{errors.length} users:#{errors}"
+    else
+      flash[:notice] = "Data imported successfully"
+    end
+    redirect_to users_path
+    # redirect_to users_path, notice: "Data imported successfully"
   end
   
   def destroy

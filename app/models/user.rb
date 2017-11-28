@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     CSV.foreach(file.path, headers: false) do |row|
       if row.length == fields.length then
         user_hash = Hash[fields.zip(row)]
-        # puts user_hash
+        puts user_hash
         # puts fields
         # creates a user for each row in the CSV file
         User.create! user_hash #row.to_hash
