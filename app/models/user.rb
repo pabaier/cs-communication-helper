@@ -27,4 +27,14 @@ class User < ActiveRecord::Base
     return errors
   end 
     
+
+   
+   def authenticate(pass)
+       @user = User.find_by(self.id)
+       if(@user.password == pass)
+           return true
+       else
+           return false
+       end
+   end
 end

@@ -55,7 +55,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   resources :groups
-  get "/login" => "login#index"
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  
+  
   root :to => redirect('/login')
   resources :users do
     collection { post :import }
