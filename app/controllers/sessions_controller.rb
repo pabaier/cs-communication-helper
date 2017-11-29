@@ -4,7 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_email(params[:session][:email].downcase)
+    tempo = User.where(:email == params[:session][:email].downcase)
+    @user = tempo.first
+    # @user = User.find_by_email(params[:session][:email].downcase)
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
       redirect_to "/users/#{@user.id}"
