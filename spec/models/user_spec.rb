@@ -15,4 +15,17 @@ describe User do
             expect(User.all_students).not_to include(student2)
         end
     end
+    
+    describe "authenticate" do
+        it "should allow users to login with correct password" do
+            student = User.create!(:password => "pass")
+            expect(student.authenticate("pass")).to eql(true)
+        end
+        
+        it "should not allow users to login with incorrect passwords" do
+            student = User.create!(:password => "pass")
+            expect(student.authenticate("sdkafkadf")).to eql(false)
+        end
+    end
+            
 end
