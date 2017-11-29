@@ -33,8 +33,8 @@ end
 #     {:user_id => 2, :group_id => 2}
 #     ]
 
-# Group.find(1).users << User.find(1)
-# Group.find(2).users << User.find(2)
+Group.find(1).users << User.find(1)
+Group.find(2).users << User.find(2)
 
 # groups_users.each do |connection|
 #     Group.users << connection
