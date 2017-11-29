@@ -13,7 +13,7 @@ Link to Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2120073
 ### Steps to setup c9 to run tests for current release. 
 Type the following:
 ```
-git checkout iteration2
+git checkout iteration3
 bundle install --without production
 rake db:migrate db:test:prepare db:seed
 rake cucumber
@@ -21,7 +21,7 @@ rake cucumber
 
 Commands for running the tests in c9:
 ```
-cucumber
 rspec
+cucumber
 ```
 
