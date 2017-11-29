@@ -2,14 +2,8 @@ require 'rails_helper'
 
 describe UsersController do
     describe "#create" do
-<<<<<<< HEAD
-        it 'should create a new user object and add it to the db' do
-            Group.create!(:title => 'Computer Science', :description => 'test')
-            
-=======
         it 'should create a new user object, add it to the db, and automatically add it to computer science' do
             Group.create!(:title => "Computer Science", :description => "test")
->>>>>>> 8c329e13a113c76c2e5958b566b6f19299c0e708
 			expect{
 			    post :create, { :user => { :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
                 :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018' } }

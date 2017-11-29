@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 describe SessionsController do
      describe "#new" do
@@ -7,6 +8,4 @@ describe SessionsController do
             expect(response).to render_template("sessions/new")
          end
      end
-             
-             
 end
