@@ -44,4 +44,3 @@ Scenario: Create new user
   When I press "Confirm"
   Then I should be on the student details page
   And I should see "smithj1citadel.edu"
-  
