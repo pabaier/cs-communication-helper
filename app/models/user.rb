@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
    
    def authenticate(pass)
-       @user = User.find_by(self.id)
+       @user = User.find(self.id)
        if(@user.password == pass)
            return true
        else
