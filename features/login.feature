@@ -10,9 +10,19 @@ Scenario: Access the system
     And I press "Submit"
     Then I am on the home page
 
-# Scenario: Login as admin
+Scenario: Login as admin
+    Given I am on the login page
+    When I fill in "Email" with "mverdicc@citadel.edu"
+    And I fill in "Password" with "password1234"
+    And I press "Submit"
+    Then I am on the home page
 
-# Scenario: Login as a student
+Scenario: Login as student
+    Given I am on the login page
+    When I fill in "Email" with "jbsmith124@citadel.edu"
+    And I fill in "Password" with "password567"
+    And I press "Submit"
+    Then I am on the home page
 
 Scenario: Should not be able to login
   Given I am on the login page

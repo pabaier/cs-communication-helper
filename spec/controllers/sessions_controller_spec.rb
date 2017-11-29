@@ -7,4 +7,6 @@ describe SessionsController do
             expect(response).to render_template("sessions/new")
          end
      end
+             
+             
 end
