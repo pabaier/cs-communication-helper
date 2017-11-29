@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  require 'csv'
+
   def index
     @all_users=User.all
     @all_groups=Group.all
@@ -81,6 +83,23 @@ class UsersController < ApplicationController
     @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.first_name} was successfully updated."
     redirect_to user_path(@user)
+  end
+  
+  def import
+    # User.import(params[:file])
+    # puts params[:file]
+    if params.key?(:file) then
+      errors = User.import(params[:file])
+      if errors.length >= 1 then
+        flash[:notice] = "Unable to import #{errors.length} users:#{errors}"
+      else
+        flash[:notice] = "Data imported successfully"
+      end
+    else
+      flash[:notice] = "No file selected!"
+    end
+    redirect_to users_path
+      # redirect_to users_path, notice: "Data imported successfully"
   end
   
   def destroy

@@ -60,7 +60,9 @@ Rails.application.routes.draw do
   
   
   root :to => redirect('/login')
-  resources :users
+  resources :users do
+    collection { post :import }
+  end
 
   # resources :users, path_names: { delete: 'del'}
   # delete "users/:id" => "users#delete", as: :delete_user

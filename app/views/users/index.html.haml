@@ -45,6 +45,17 @@
     = select_tag("delimiter", options_for_select(@all_delimiters, :delimiter))
 
 %br
+%div
+%br
+  Bulk Import Student List
+  %br Format without Heading
+  First Name | Last Name | Email | Password | Status | Graduation Date
+  %br
+  %br 
+  = form_tag import_users_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import CSV"
+        
 %br
 = link_to 'Create new user', new_user_path
 
