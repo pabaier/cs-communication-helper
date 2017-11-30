@@ -7,7 +7,13 @@ Background: users in database
   Given the following users exist:
    | first_name  | last_name | email                       | password | status  | graduation_date |   
    | Bob         | Manman    | jbsmith123@citadel.edu      | pass123  | student | 12/12/12        |
-   | Jan         | Tinkerton | tinkerbell88@neverland.pixi | peter    | Admin   | 1/2/20          | 
+   | Jan         | Tinkerton | tinkerbell88@neverland.pixi | peter    | Admin   | 1/2/20          |
+
+  Given the following groups exist:
+    | title | description          |
+    | ACM   | The compsci club     |
+    | Cybersecurity | Cool hackers |
+    | Computer Science | Computer Science |
 
 Scenario: Uploading a valid file with new users
   Given I am on the users page
