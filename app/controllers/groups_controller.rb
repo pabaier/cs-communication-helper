@@ -29,8 +29,13 @@ class GroupsController < ApplicationController
   
   def destroy
     @group = Group.find(params[:id])
-    @group.destroy
-    flash[:notice] = "Group '#{@group.title}' is deleted."
+    
+    if (@group.title == 'Computer Science') 
+      flash[:notice] = "Group '#{@group.title}' cannot be deleted."
+    else
+      @group.destroy
+      flash[:notice] = "Group '#{@group.title}' is deleted."
+    end
     redirect_to groups_path
   end
 end
