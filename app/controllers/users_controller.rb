@@ -83,9 +83,6 @@ class UsersController < ApplicationController
   
     @cs_group_id = Group.find_by_title('Computer Science').id
     
-    print "Params: "
-    puts params
-    
     if !params[:user][:group_ids].include?(@cs_group_id)
       flash[:notice] = "#{@user.first_name} #{@user.last_name} must have Computer Science."
       params[:user][:group_ids].push(@cs_group_id)
