@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       end
     end
     
-    if session[:emails] == []
+    if session[:emails] == nil
       session[:emails] = @selected_emails
     end
     
