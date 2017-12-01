@@ -26,6 +26,10 @@ class UsersController < ApplicationController
       end
     end
     
+    if session[:emails] == []
+      session[:emails] = @selected_emails
+    end
+    
     if params[:groups] != session[:groups]
       session[:groups] = @selected_groups
       session[:emails] = @selected_emails
@@ -84,7 +88,7 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.first_name} was successfully updated."
-    redirect_to user_path(@user)
+    redirect_to edit_user_path(@user)
   end
   
   def import

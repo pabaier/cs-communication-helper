@@ -1,5 +1,5 @@
 .row
-  .back_nav= link_to 'Back', groups_path
+  .back_nav= link_to 'Groups', groups_path
   .logout= link_to 'Log out', login_path
 
 
@@ -11,6 +11,8 @@
     = check_box_tag "groups[#{group.title}]", group.id, @selected_groups.include?(group.title), :id => "groups_#{group.id}"
     = label_tag "groups_#{group.id}", group.title
   = submit_tag 'Refresh'
+
+= link_to 'Create new user', new_user_path
 
 %p
 %table.table.table-bordered
@@ -27,13 +29,12 @@
   %tbody
     - @selected_users.each do |user|
       %tr
-        %td.first_name
-          = link_to(user.first_name, html_options = {:action => 'show', :id => user.id})
+        %td= user.first_name
         %td= user.last_name
         %td= user.email
         %td= user.status
         %td= user.graduation_date
-        %td= 'place_holder'
+        %td= user.groups.map(&:title).join(", ")
         %td= button_to 'Edit details', edit_user_path(user), :method => :get
         %td= button_to 'Delete User', "/users/#{user.id}", :id => "del_#{user.email}", :method => :delete, data: { confirm: 'are you sure?' }
         
@@ -47,16 +48,14 @@
 %br
 %div
 %br
-  Bulk Import Student List
-  %br Format without Heading
+  %h2 Bulk Import Student List
+  %br 
+  Format without Heading
   First Name | Last Name | Email | Password | Status | Graduation Date
   %br
   %br 
   = form_tag import_users_path, multipart: true do
     = file_field_tag :file
     = submit_tag "Import CSV"
-        
-%br
-= link_to 'Create new user', new_user_path
 
 .bottom-margin

@@ -17,19 +17,15 @@ Background: users in database
   Given the user "1" belongs to the groups "1, 2, 3"
 
 Scenario: Subscribe to group
-  Given I am on the student details page
-  When I follow "Bob"
-  Then I should be on the student details page for "jbsmith123@citadel.edu"
+  Given I am on the student edit details page for "jbsmith123@citadel.edu"
   When I subscribe to "Cybersecurity"
-  Then I should be on the student details page for "jbsmith123@citadel.edu"
+  Then I should be on the student edit details page for "jbsmith123@citadel.edu"
   And the user should be subscribed to "Cybersecurity"
   
 Scenario: Unsubscribe from group
-  Given I am on the student details page
-  When I follow "Bob"
-  Then I should be on the student details page for "jbsmith123@citadel.edu"
+  Given I am on the student edit details page for "jbsmith123@citadel.edu"
   When I unsubscribe from "ACM"
-  Then I should be on the student details page for "jbsmith123@citadel.edu"
+  Then I should be on the student edit details page for "jbsmith123@citadel.edu"
   And the user should be unsubscribed from "ACM"
   
 Scenario: Create new user
