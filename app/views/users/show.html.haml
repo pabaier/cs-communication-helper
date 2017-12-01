@@ -1,8 +1,9 @@
 .row
-  .back_nav= link_to 'Back', groups_path
+  -if @user.status == "Admin"
+    .back_nav= link_to 'Users', users_path
   .logout= link_to 'Log out', login_path
 
-%h2 Computer Science Group Subscriptions for #{@user.first_name} #{@user.last_name}
+%h2 Welcome, #{@user.first_name} #{@user.last_name}!
 
 %table.table.table-bordered
   %thead
@@ -20,8 +21,7 @@
       %td= @user.email
       %td= @user.status
       %td= @user.graduation_date
-      - @user.group_ids.each do |group|
-        %td= @groups.find(group).title
+      %td= @user.groups.map(&:title).join(", ")
 
 = form_for(@user) do |f|
   //empty field because starting with a field for collection check boxes breaks it for some reason
@@ -35,8 +35,5 @@
   .actions
     = f.submit
   
-= link_to 'Edit', edit_user_path(@user)
-  
 -if @user.status == "Admin"
-  = link_to 'All Users', users_path
-  
+  = link_to 'Edit detail', edit_user_path(@user)
