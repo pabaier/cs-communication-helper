@@ -26,9 +26,9 @@ cucumber
 ```
 
 ### Sample Bulk Import CSV
-Steve,Jobs,sjo@apple.com,12345,Student,12/3/88
-Sam,Jobs,sjo@apple.com,12345,Student,12/3/88
-Shelly,Jobs,sjo@apple.com,12345,Student,12/3/88
+Steve,Jobs,sjo@apple.com,12345,Student,12/3/1988
+Sam,Jobs,sjo@apple.com,12345,Student,12/3/1988
+Shelly,Jobs,sjo@apple.com,12345,Student,12/3/1988
 
 ### Current Bugs
 In order for the Export Users feature to work, the "Refresh" button must be pressed at least once.
