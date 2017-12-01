@@ -60,27 +60,40 @@ describe UsersController do
     end
     
     describe "POST #import" do
+        it "imports the user file" do
+          one = User.create(:id => 1, :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
+                :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018')
+          Group.create!(:title => "Computer Science", :description => "test")
+          allow(User).to receive(:import).with("users.csv").and_return([[one], []])
+          post :import, file: "users.csv"
+        end
+        
         it "redirects to the users page" do
-          allow(User).to receive(:import).with("users.csv").and_return(["hello", "world"])
+          one = User.create(:id => 1, :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
+                :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018')
+          Group.create!(:title => "Computer Science", :description => "test")
+          allow(User).to receive(:import).with("users.csv").and_return([[one], ["hello", "world"]])
           post :import, file: "users.csv"
           expect(response).to redirect_to users_path
         end
 
         it "adds a good flash notice" do
-          allow(User).to receive(:import).with("users.csv").and_return([])
+            
+          one = User.create(:id => 1, :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
+                :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018')
+          Group.create!(:title => "Computer Science", :description => "test")
+          allow(User).to receive(:import).with("users.csv").and_return([[one], []])
           post :import, file: "users.csv"
           expect(flash[:notice]).to eq "Data imported successfully"
         end
         
         it "adds a bad flash notice" do
-          allow(User).to receive(:import).with("users.csv").and_return(["Steve"])
+          one = User.create(:id => 1, :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
+                :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018')
+          Group.create!(:title => "Computer Science", :description => "test")
+          allow(User).to receive(:import).with("users.csv").and_return([[one], ["Steve"]])
           post :import, file: "users.csv"
           expect(flash[:notice]).to eq "Unable to import 1 users:[\"Steve\"]"
-        end
-    
-        it "imports the user file" do
-          allow(User).to receive(:import).with("users.csv").and_return(["hello", "world"])
-          post :import, file: "users.csv"
         end
     end
 end

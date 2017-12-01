@@ -52,10 +52,9 @@ class UsersController < ApplicationController
     @groups=Group.all
   end
   
-  def create
-
+  def add_to_default_group new_user
     @cs_group = Group.where(title: 'Computer Science').first
-    @cs_group_id = Group.find_by_title('Computer Science').id
+    @cs_group_id = @cs_group.id
     
     @selected_groups = params[:groups] || {}
     
@@ -67,13 +66,16 @@ class UsersController < ApplicationController
       @selected_groups.merge({@cs_group.title => @cs_group_id})
     end
 
-    @user = User.create!(user_params)
-    
     @selected_groups.values.each do |group_id|
-      group = Group.find_by_id(group_id)
-      @user.groups << group
+      group = Group.find(group_id)
+      new_user.groups << group
     end
     
+  end
+  
+  def create
+    @user = User.create!(user_params)
+    add_to_default_group @user
     flash[:notice] = "#{@user.first_name} #{@user.last_name} was successfully created."
     redirect_to users_path
   end
@@ -86,10 +88,13 @@ class UsersController < ApplicationController
   end
   
   def import
-    # User.import(params[:file])
-    # puts params[:file]
     if params.key?(:file) then
-      errors = User.import(params[:file])
+      result = User.import(params[:file])
+      valid_users = result[0]
+      errors = result[1]
+      valid_users.each do |user|
+        add_to_default_group user
+      end
       if errors.length >= 1 then
         flash[:notice] = "Unable to import #{errors.length} users:#{errors}"
       else

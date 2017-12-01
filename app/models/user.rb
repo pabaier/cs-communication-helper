@@ -11,20 +11,20 @@ class User < ActiveRecord::Base
   def self.import(file)
     fields = User.column_names - ["id"]
     errors = []
+    valid_users = []
     # fields.delete("id")
     # a block that runs through a loop in our CSV data
     CSV.foreach(file.path, headers: false) do |row|
       if row.length == fields.length then
         user_hash = Hash[fields.zip(row)]
-        puts user_hash
-        # puts fields
         # creates a user for each row in the CSV file
-        User.create! user_hash #row.to_hash
+        valid_user = User.create! user_hash
+        valid_users << valid_user
       else
         errors << row
       end
     end
-    return errors
+    return [valid_users, errors]
   end 
     
 
