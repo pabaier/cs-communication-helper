@@ -26,13 +26,12 @@ class UsersController < ApplicationController
       end
     end
     
-    if session[:emails] == nil
+    if session[:emails] != @selected_emails
       session[:emails] = @selected_emails
     end
     
     if params[:groups] != session[:groups]
       session[:groups] = @selected_groups
-      session[:emails] = @selected_emails
       flash.keep
       redirect_to :groups => @selected_groups and return
     end
