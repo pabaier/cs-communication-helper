@@ -35,3 +35,6 @@ In order for the Export Users feature to work, the "Refresh" button must be pres
 
 When users are bulk imported, they are in the database but are not automatically added to a group.
 
+### Logging in
+To login as an admin the email is : mverdicc@citadel.edu and password is: password1234
+To login as a student the email is: sm@gmail.edu and password is: password1234
