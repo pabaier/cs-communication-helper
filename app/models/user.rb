@@ -18,8 +18,17 @@ class User < ActiveRecord::Base
       if row.length == fields.length then
         user_hash = Hash[fields.zip(row)]
         # creates a user for each row in the CSV file
-        valid_user = User.create! user_hash
-        valid_users << valid_user
+        duplicate = User.where(:email => user_hash["email"])
+        puts "*******************************"
+        puts user_hash["email"]
+        puts user_hash
+        puts "*******************************"
+        if duplicate.empty? then
+          valid_user = User.create! user_hash
+          valid_users << valid_user
+        else
+          errors << user_hash
+        end
       else
         errors << row
       end

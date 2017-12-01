@@ -6,8 +6,8 @@ Feature: CSV file upload
 Background: users in database
   Given the following users exist:
    | first_name  | last_name | email                       | password | status  | graduation_date |   
-   | Bob         | Manman    | jbsmith123@citadel.edu      | pass123  | student | 12/12/12        |
-   | Jan         | Tinkerton | tinkerbell88@neverland.pixi | peter    | Admin   | 1/2/20          |
+   | Bob         | Manman    | sjo@apple.com      | pass123  | student | 12/12/1912        |
+   | Jan         | Tinkerton | tinkerbell88@neverland.pixi | peter    | Admin   | 1/2/1920          |
 
   Given the following groups exist:
     | title | description          |
@@ -32,6 +32,19 @@ Scenario: Uploading a valid file with new users
 Scenario: Uploading a bad file
   Given I am on the users page
   When I upload a bad file
+  Then the number of users should be 4
+  Then I should have the following users:
+  | first_name|
+  | Bob       |
+  | Jan       |
+  | Sam       |
+  | Shelly    |
+  And I should be on the users page
+  
+  
+  Scenario: Uploading a file with a duplicate email
+  Given I am on the users page
+  When I upload a duplicate file
   Then the number of users should be 4
   Then I should have the following users:
   | first_name|

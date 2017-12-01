@@ -95,5 +95,6 @@ describe UsersController do
           post :import, file: "users.csv"
           expect(flash[:notice]).to eq "Unable to import 1 users:[\"Steve\"]"
         end
+
     end
 end
