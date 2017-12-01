@@ -14,6 +14,13 @@ When /^(?:|I )upload a bad file$/ do
   click_button "Import CSV"
 end
 
+When /^(?:|I )upload a duplicate file$/ do
+  attach_file(:file, File.join('features', 'upload_files', 'bad_csv.csv'))
+#   attach_file(:csv_file, File.join(RAILS_ROOT, 'features', 'upload_files', 'duplicate_csv.csv'))
+  click_button "Import CSV"
+end
+
+
 Then("the number of users should not change") do
   User.count.should == 4
 end
