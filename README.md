@@ -6,7 +6,7 @@ This web app is being expertly developed by the capable minds of Paul Baier, Ela
 
 We hope you enjoy the site!
 
-Link to heroku: https://aqueous-bayou-89861.herokuapp.com/
+Link to heroku: https://cs-communication-helper.herokuapp.com/
 
 Link to Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2120073
 
