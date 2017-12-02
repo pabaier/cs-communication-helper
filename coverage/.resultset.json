@@ -44,8 +44,13 @@
         null,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         1,
         1,
+        null,
         1,
         null,
         null
@@ -152,11 +157,10 @@
         null,
         null,
         26,
-        11,
+        16,
         null,
         null,
         26,
-        5,
         5,
         5,
         5,
@@ -211,6 +215,15 @@
         null,
         1,
         4,
+        null,
+        4,
+        null,
+        4,
+        4,
+        4,
+        null,
+        null,
+        null,
         4,
         4,
         4,
@@ -276,7 +289,7 @@
         null
       ]
     },
-    "timestamp": 1512167180
+    "timestamp": 1512234490
   },
   "RSpec": {
     "coverage": {
@@ -325,8 +338,13 @@
         null,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         1,
         1,
+        null,
         1,
         null,
         null
@@ -397,7 +415,6 @@
         0,
         0,
         0,
-        0,
         null,
         null,
         null,
@@ -449,6 +466,15 @@
         null,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         1,
         1,
         1,
@@ -555,6 +581,6 @@
         null
       ]
     },
-    "timestamp": 1512167170
+    "timestamp": 1512234536
   }
 }

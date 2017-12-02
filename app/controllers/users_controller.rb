@@ -85,6 +85,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
+  
+    @cs_group_id = Group.find_by_title('Computer Science').id
+    
+    if !params[:user][:group_ids].include?(@cs_group_id)
+      flash[:notice] = "#{@user.first_name} #{@user.last_name} must have Computer Science."
+      params[:user][:group_ids].push(@cs_group_id)
+    end
+    
+    
     @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.first_name} was successfully updated."
     redirect_to edit_user_path(@user)

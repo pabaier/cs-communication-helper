@@ -36,6 +36,10 @@ end
 Group.find(1).users << User.find(1)
 Group.find(2).users << User.find(2)
 
+#Add users to Computer Science Group
+Group.find(3).users << User.find(1)
+Group.find(3).users << User.find(2)
+
 # groups_users.each do |connection|
 #     Group.users << connection
 # end

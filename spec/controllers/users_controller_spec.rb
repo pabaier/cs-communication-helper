@@ -29,9 +29,10 @@ describe UsersController do
     
     describe "#update" do
         it 'should update a user object from the db' do
+            Group.create!(:title => "Computer Science", :description => "test")
             @user = User.create(:id => 1, :first_name => 'first', :last_name => 'last', :email => 'firstlast@citadel.edu',
                 :password => 'password1234', :status => 'Student', :graduation_date => '3-May-2018')
-            put :update, :id => @user, :user => {:first_name => 'newfirst'}
+            put :update, :id => @user, :user => {:first_name => 'newfirst', :group_ids => ["1"]}
             @user.reload
             expect(@user.first_name).to eq("newfirst")
         end

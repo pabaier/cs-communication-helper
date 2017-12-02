@@ -12,6 +12,7 @@ Given the following groups exist:
     | title | description          |
     | ACM   | The compsci club     |
     | Cybersecurity | Cool hackers |
+    | Computer Science | Computer Science Department | 
   
 Scenario:
   Given I am on the student details page for "jbsmith123@citadel.edu"
